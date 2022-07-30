@@ -1,0 +1,62 @@
+### GET 
+http://localhost:5000
+
+### POST 
+http://localhost:5000/api/register 
+
+Content-Type: application/json
+
+{ "name": "Gedas", "email": "Gedas@email.com", "password": "123456" }
+
+### POST 
+http://localhost:5000/api/login 
+
+Content-Type: application/json
+
+{ "email": "vienas@gmail.com", "password": "master" }
+
+### GET 
+http://localhost:5000/api/questions
+
+### POST 
+http://localhost:5000/api/questions
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+{ "title": "Questionnn", "content": "Question" }
+
+### PATCH 
+http://localhost:5000/api/questions/3
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+{ "title": "New answer", "content": "New Answer 222" }
+
+### DELETE 
+http://localhost:5000/api/questions/17 
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+### GET 
+http://localhost:5000/api/questions/1/answers 
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+### POST 
+http://localhost:5000/api/questions/1/answers 
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+{ "content": "ABDDDD" }
+
+### PATCH 
+http://localhost:5000/api/answers/2 
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+
+{ "content":"updated 003" }
+
+### DELETE 
+http://localhost:5000/api/answers/2 
+
+Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
