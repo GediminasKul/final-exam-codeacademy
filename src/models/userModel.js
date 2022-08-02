@@ -8,7 +8,7 @@ async function executeDb(sql, dataToDbArr) {
     const [result] = await conn.execute(sql, dataToDbArr);
     return result;
   } catch (error) {
-    throw new Error('error in executeDb === ', error);
+    console.log('error in executeDb === ' + error.message);
   } finally {
     conn?.end();
   }
@@ -20,7 +20,7 @@ function saveUser(name, email, password) {
 }
 
 function findUserByEmail(email) {
-  const sql = 'SELECT * FROM users WHERE email = ?';
+  const sql = `SELECT * FROM users WHERE email = "${email}"`;
   return executeDb(sql, [email]);
 }
 

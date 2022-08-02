@@ -1,21 +1,23 @@
 import { useFormik } from 'formik';
+import toast from 'react-hot-toast';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 import { baseUrl, myFetch } from '../../utils';
-import Button from '../button/button';
+import Button from '../UI/button/button';
 import css from './registerform.module.css';
 
 const initValues = {
+  name: '',
   email: '',
   password: '',
   repeatPassword: '',
 };
-
 function RegisterForm() {
   const history = useHistory();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
+      name: Yup.string().min(4, 'At least 4 characters').max(20).required(),
       email: Yup.string().email('Please check your email').required(),
       password: Yup.string().min(4, 'At least 4 characters').max(20).required(),
       repeatPassword: Yup.string()
@@ -27,37 +29,43 @@ function RegisterForm() {
       const valuesCopy = { ...values };
       delete valuesCopy['repeatPassword'];
       const registerResult = await myFetch(
-        `${baseUrl}v1/auth/register`,
+        `${baseUrl}/api/register`,
         'POST',
         valuesCopy
       );
-      if (registerResult.changes === 1) {
-        alert('Register successfull! Redirecting to login page...');
+      if (registerResult === 'user created') {
+        toast.success('Register successfull! Redirecting to login page...');
         history.replace('/login');
       }
-      if (registerResult.changes === 0) {
-        alert('Register failed. Try again.');
+      if (registerResult === 'Cannot create user') {
+        toast.error('Register failed. Try again.');
         return;
       }
     },
   });
 
-  function matchPass() {
-    const { password, repeatPassword } = initValues;
-    if (password !== repeatPassword) {
-      console.log('Passwords does not match');
-    }
-  }
-
   return (
     <div className={css['form-container']}>
       <h3 className={css['form-title']}>Register here</h3>
 
-      <form
-        onSubmit={formik.handleSubmit}
-        onBlur={matchPass}
-        className={css['register-form']}
-      >
+      <form onSubmit={formik.handleSubmit} className={css['register-form']}>
+        <div className={css['form-group']}>
+          <label htmlFor="name">Name</label>
+          <input
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+            className={
+              formik.touched.name && formik.errors.name ? css['invalid'] : ''
+            }
+            name="name"
+            type="text"
+            id="name"
+          />
+          {formik.touched.name && formik.errors.name && (
+            <p className={css['error-msg']}>{formik.errors.name}</p>
+          )}
+        </div>
         <div className={css['form-group']}>
           <label htmlFor="email">Email</label>
           <input

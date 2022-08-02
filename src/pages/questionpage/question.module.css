@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+}
+
+.cards-container {
+  text-align: center;
+}
+
+.add-link {
+  color: tomato;
+}
+
+.sort-questions button {
+  margin-right: 0.5rem;
+}

@@ -23,12 +23,12 @@ async function postAnswer(req, res) {
   const { id } = req.params;
   const idFromToken = req.userId;
   try {
-    const result = await saveAnswerToDb(id, idFromToken, content);
+    const result = await saveAnswerToDb(idFromToken, id, content);
     if (result.affectedRows === 1) {
-      res.status(201).json('Answer succesfully added!');
+      res.status(201).json('Answer has been succesfully added!');
       return;
     }
-    res.status(400).json('Answer was not added!');
+    res.status(400).json('Answer has not been added!');
   } catch (error) {
     console.log(error);
     res.status(500).json('Something went wrong');
@@ -48,7 +48,6 @@ async function getQuestions(req, res) {
 async function addNewQuestion(req, res) {
   const { title, content } = req.body;
   const idFromToken = req.userId;
-  console.log('idFromToken ===', idFromToken);
   try {
     const saveResult = await addQuestionToDb(title, content, idFromToken);
     if (saveResult.affectedRows === 1) {
@@ -63,13 +62,11 @@ async function addNewQuestion(req, res) {
   }
 }
 
-// nebaigtas
 async function patchQuestion(req, res) {
   const id = req.params;
   const { title, content } = req.body;
-  const idFromToken = req.userId;
   try {
-    const saveResult = await updateQuestion(id, idFromToken, title, content);
+    const saveResult = await updateQuestion(id, title, content);
     if (saveResult.affectedRows === 1) {
       res.status(201).json('Question successfully edited');
       return;
@@ -81,12 +78,10 @@ async function patchQuestion(req, res) {
   }
 }
 
-// nebaigtas
 async function deleteQuestion(req, res) {
   const id = req.params;
-  const idFromToken = req.userId;
   try {
-    const saveResult = await deleteQuestionFromDb(id, idFromToken);
+    const saveResult = await deleteQuestionFromDb(id);
     if (saveResult.affectedRows === 1) {
       res.status(201).json('Question successfully deleted');
       return;

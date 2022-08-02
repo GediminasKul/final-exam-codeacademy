@@ -14,9 +14,9 @@ async function executeDb(sql, dataToDbArr) {
   }
 }
 
-function patchAnswer(id, user_id, content) {
-  const sql = `UPDATE answers SET content = ? WHERE id=${id.id} AND user_id=${user_id}`;
-  return executeDb(sql, [content, user_id]);
+function patchAnswer(id, content) {
+  const sql = `UPDATE answers SET content = ? WHERE id=${id.id}`;
+  return executeDb(sql, [content]);
 }
 
 function deleteAnswerFromDb(id, user_id) {

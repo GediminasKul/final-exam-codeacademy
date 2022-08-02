@@ -1,0 +1,60 @@
+.form-container {
+  max-width: 50rem;
+  margin: 0 auto;
+  box-shadow: 0.2rem 0.5em 0.9rem grey;
+  border-radius: 0.3rem;
+  padding: 1rem;
+}
+
+.dynamic-title {
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-container form {
+  margin-top: 1rem;
+}
+.form-title {
+  text-align: center;
+}
+
+.nav-link {
+  /* margin-left: 1rem; */
+  color: darkorange;
+}
+
+.error-msg {
+  color: tomato;
+  margin: 0;
+}
+
+.invalid {
+  border: 0.01rem solid tomato;
+}
+
+.answer-form input,
+textarea {
+  outline: none;
+  border-radius: 0.2rem;
+}
+.answer-form input {
+  min-height: 1.5rem;
+}
+
+.answer-form label {
+  margin-top: 0.5rem;
+}
+
+.answer-form textarea {
+  resize: vertical;
+  min-width: -webkit-fill-available;
+}
+
+.answer-form button {
+  margin-right: 0.2rem;
+}

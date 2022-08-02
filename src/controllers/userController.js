@@ -9,16 +9,7 @@ async function registerUser(req, res) {
     const plainTextPassword = password;
     const hashedPassword = bcryptjs.hashSync(plainTextPassword, 10);
 
-    const newUser = {
-      name,
-      email,
-      password: hashedPassword,
-    };
-    const insertResult = await saveUser(
-      newUser.name,
-      newUser.email,
-      newUser.password
-    );
+    const insertResult = await saveUser(name, email, hashedPassword);
 
     if (insertResult === false) {
       res.status(500).json('something went wrong');
@@ -38,7 +29,7 @@ async function loginUser(req, res) {
   const foundUserArr = await findUserByEmail(receivedEmail);
 
   const foundUser = foundUserArr[0];
-
+  console.log(foundUser);
   if (!foundUser) {
     res.status(400).json('Email or password not found');
     return;
@@ -50,7 +41,7 @@ async function loginUser(req, res) {
 
   const payload = { userId: foundUser.id };
   const token = generateJwtToken(payload);
-  res.json({ success: true, token });
+  res.json({ success: true, token, payload });
 }
 
 module.exports = {

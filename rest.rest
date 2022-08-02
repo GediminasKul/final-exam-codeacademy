@@ -1,62 +1,69 @@
-### GET 
-http://localhost:5000
+### 
+GET http://localhost:5000
 
-### POST 
-http://localhost:5000/api/register 
+### 
 
-Content-Type: application/json
+
+POST http://localhost:5000/api/register 
+Content-Type: application/json 
 
 { "name": "Gedas", "email": "Gedas@email.com", "password": "123456" }
 
 ### POST 
-http://localhost:5000/api/login 
-
+POST http://localhost:5000/api/login 
 Content-Type: application/json
 
-{ "email": "vienas@gmail.com", "password": "master" }
+{ "email": "Gedas11@email.com", "password": "1234567" }
 
 ### GET 
-http://localhost:5000/api/questions
+GET http://localhost:5000/api/questions
 
 ### POST 
-http://localhost:5000/api/questions
+POST http://localhost:5000/api/questions
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkzNDUxNjQsImV4cCI6MTY1OTM0ODc2NH0.1gEXtSB32H8pFkQTddV-68rFIrqBMpaNLqxMdxXHFEU
 
 { "title": "Questionnn", "content": "Question" }
 
 ### PATCH 
-http://localhost:5000/api/questions/3
+PATCH http://localhost:5000/api/questions/3
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
 
 { "title": "New answer", "content": "New Answer 222" }
 
 ### DELETE 
-http://localhost:5000/api/questions/17 
+DELETE http://localhost:5000/api/questions/17 
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
 
 ### GET 
-http://localhost:5000/api/questions/1/answers 
+GET http://localhost:5000/api/questions/1/answers 
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
 
 ### POST 
-http://localhost:5000/api/questions/1/answers 
+POST http://localhost:5000/api/questions/1/answers 
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
 
 { "content": "ABDDDD" }
 
 ### PATCH 
-http://localhost:5000/api/answers/2 
+PATCH http://localhost:5000/api/answers/2 
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
 
 { "content":"updated 003" }
 
 ### DELETE 
-http://localhost:5000/api/answers/2 
+DELETE http://localhost:5000/api/answers/2 
+Content-Type: application/json 
 
-Content-Type: application/json Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY1OTAyNjQ4MSwiaWF0IjoxNjU5MDI2NDgxfQ.CqU3S3-o0GZmoo6C7EO7RqkpYQU-FEdt2gXHUE0h0ao
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTkyODAyNTUsImV4cCI6MTY1OTI4Mzg1NX0.2FG6sDK0eexNige9BHQ3cPwCIf9E36fTmG_XFfJSeqE
