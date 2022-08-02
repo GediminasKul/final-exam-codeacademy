@@ -17,11 +17,6 @@ function EditQuestionPage() {
     content,
   });
 
-  // const initValues = {
-  //   title: title,
-  //   content: content,
-  // };
-
   useEffect(() => {
     setUpdatedTitleAndAnswer({ title, content });
   }, [title, content]);
@@ -50,7 +45,6 @@ function EditQuestionPage() {
 
     onSubmit: async (values) => {
       myPatchAuth(id);
-      // const valueCopy = { ...values };
 
       const editResult = await myPatchAuth(
         `${baseUrl}/api/questions/${id}`,
