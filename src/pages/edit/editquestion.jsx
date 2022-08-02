@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import { NavLink, useHistory, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
-import { useAuthCtx } from '../../';
+import { useAuthCtx } from '../../store/authContext';
 import { baseUrl, myPatchAuth } from '../../utils';
 import css from './editquestion.module.css';
 import Button from '../../components/UI/button/button';
