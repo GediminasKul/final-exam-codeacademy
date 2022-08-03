@@ -87,28 +87,6 @@ function QuestionsPage() {
   return (
     <div className={css['cards-container']}>
       <h1 className={css['title']}>Questions Page</h1>
-      <div className={css['sort-questions']}>
-        {questions.length > 1 && (
-          <>
-            <Button
-              button
-              primary
-              className={css['asc-button']}
-              onClick={getQuestionsAsc}
-            >
-              Sort Ascending
-            </Button>
-            <Button
-              button
-              primary
-              className={css['desc-button']}
-              onClick={getQuestionsDesc}
-            >
-              Sort Descending
-            </Button>
-          </>
-        )}
-      </div>
       <div className={css['cards-output']}>
         {!Array.isArray(questions) ? (
           <h2 className={css['loading']}>Loading...</h2>
@@ -126,6 +104,28 @@ function QuestionsPage() {
           questions.map((qObj) => (
             <Card key={qObj.id} {...qObj} onDelete={deleteQuestion} />
           ))
+        )}
+      </div>
+      <div className={css['sort-questions']}>
+        {questions.length > 1 && (
+          <>
+            <Button
+              button
+              primary
+              className={css['asc-button']}
+              onClick={getQuestionsAsc}
+            >
+              Sort by Ascending
+            </Button>
+            <Button
+              button
+              primary
+              className={css['desc-button']}
+              onClick={getQuestionsDesc}
+            >
+              Sort by Descending
+            </Button>
+          </>
         )}
       </div>
     </div>

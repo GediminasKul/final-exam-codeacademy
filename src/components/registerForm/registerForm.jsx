@@ -50,7 +50,9 @@ function RegisterForm() {
 
       <form onSubmit={formik.handleSubmit} className={css['register-form']}>
         <div className={css['form-group']}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name" className={css['addFont']}>
+            Name
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -67,7 +69,9 @@ function RegisterForm() {
           )}
         </div>
         <div className={css['form-group']}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className={css['addFont']}>
+            Email
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -84,7 +88,9 @@ function RegisterForm() {
           )}
         </div>
         <div className={css['form-group']}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className={css['addFont']}>
+            Password
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -103,7 +109,9 @@ function RegisterForm() {
           )}
         </div>
         <div className={css['form-group']}>
-          <label htmlFor="repeatPassword">Repeat Password</label>
+          <label htmlFor="repeatPassword" className={css['addFont']}>
+            Repeat Password
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -121,7 +129,7 @@ function RegisterForm() {
             <p className={css['error-msg']}>{formik.errors.repeatPassword}</p>
           )}
         </div>
-        <Button submit primary>
+        <Button submit primary className={css['addFont']}>
           Register
         </Button>
       </form>

@@ -5,7 +5,7 @@ import Button from '../button/button';
 import css from './card.module.css';
 
 function Card(props) {
-  // const [answers, setAnswers] = useState('');
+  console.log(props);
   const userId = useAuthCtx();
   const { isUserLoggedIn } = useAuthCtx();
 
@@ -17,29 +17,21 @@ function Card(props) {
   return (
     <div className={css['card-container']}>
       <div className={css['card']}>
-        {/* <h3 className={css['count-answers']}>Total answers: {props.answers}</h3> */}
-        <h2 className={css['title']}>{props.title}</h2>
+        <h2 className={css['title']}>Title: {props.title}.</h2>
         <h3 className={css['content']}>{props.content}</h3>
-
         <NavLink onClick={handleValues} to={`/${props.id}/answers`}>
-          <p>click to see answers</p>
+          <p className={css['taisykle']}>click to see the answers.</p>
         </NavLink>
-
         <article className={css['created-edited-deleted']}>
           <div>
-            <p className={css['created']}>
-              <i>Created at:</i>
-              {props.created_at.split('T').join(' ').split('.000Z')}
-            </p>
-
-            <p className={css['edited']}>
+            {/* <p className={css['edited']}>
               {props.edited_at && (
                 <i>
                   Edited at:
                   {props.edited_at?.split('T').join(' ').split('.000Z')}{' '}
                 </i>
               )}
-            </p>
+            </p> */}
           </div>
 
           <div className={css['delete-edit']}>

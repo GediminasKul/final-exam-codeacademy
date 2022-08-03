@@ -3,11 +3,10 @@
 /* font-family: 'Mouse Memoirs', sans-serif; */
 
 .footer {
-  transform: translate(0%, 150%);
-  position: absolute;
   bottom: 0;
   width: 100%;
   height: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-text {
