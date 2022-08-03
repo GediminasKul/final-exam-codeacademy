@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans&family=Mouse+Memoirs&family=Open+Sans:wght@300;600&family=Passion+One:wght@700&family=Poppins:wght@300;400;500&family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+
+.protected-container {
+  margin: 2rem auto;
+  margin-top: 10rem;
+  background-color: rgb(244, 240, 240);
+  text-align: center;
+  max-width: 30rem;
+  box-shadow: 0.2rem 0.5em 0.9rem grey;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 2rem;
+}
+
+.nav-link {
+  color: rgb(10, 149, 255);
+}

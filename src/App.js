@@ -10,9 +10,6 @@ import ProtectedRoute from './components/protectedRoute/protectedRoute';
 import HomePage from './pages/home/home';
 import QuestionsPage from './pages/questionpage/question';
 import AddQuestion from './pages/addquestion/addquestion';
-import AnswersPage from './pages/answers/answerspage';
-import EditQuestionPage from './pages/edit/editquestion';
-import EditAnswerPage from './pages/edit/editanswer';
 
 function App() {
   return (
@@ -29,18 +26,9 @@ function App() {
         <Route path={'/questions'}>
           <QuestionsPage />
         </Route>
-        <ProtectedRoute path={'/editQuestion/:id'}>
-          <EditQuestionPage />
-        </ProtectedRoute>
-        <ProtectedRoute path={'/editAnswer/:id'}>
-          <EditAnswerPage />
-        </ProtectedRoute>
         <ProtectedRoute path={'/add'}>
           <AddQuestion />
         </ProtectedRoute>
-        <Route path={'/:id/answers'}>
-          <AnswersPage />
-        </Route>
         <Route exact path={'/'}>
           <HomePage />
         </Route>
