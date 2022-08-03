@@ -8,29 +8,38 @@ async function executeDb(sql, dataToDbArr) {
     const [result] = await conn.execute(sql, dataToDbArr);
     return result;
   } catch (error) {
-    throw new Error('error in executeDb === ', error);
+    console.log('error in executeDb === ' + error.message);
   } finally {
     conn?.end();
   }
 }
 
-// function getAllQuestions() {
-//   const sql = 'SELECT * FROM questions WHERE archived=0 ';
-//   return executeDb(sql, []);
-// }
 function getAllQuestions() {
-  const sql =
-    'SELECT questions.id, questions.user_id, questions.title, questions.content, questions.created_at, questions.edited_at, COUNT(answers.question_id) as answers FROM questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.archived=0 OR answers.archived=0 GROUP BY answers.question_id';
+  const sql = 'SELECT * FROM questions WHERE archived=0 ';
   return executeDb(sql, []);
 }
 
+// function getAllQuestions() {
+//   const sql =
+//     'SELECT questions.id, questions.user_id, questions.title, questions.content, questions.created_at, questions.edited_at, COUNT(answers.question_id) as answers FROM questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.archived=0 OR answers.archived=0 GROUP BY answers.question_id';
+//   return executeDb(sql, []);
+// }
+
+// function getAllQuestions() {
+//   const sql =
+//     'SELECT questions.id, questions.user_id, questions.title, questions.content, questions.created_at, questions.edited_at, questions.archived, COUNT(answers.question_id) as answers FROM questions LEFT JOIN answers ON questions.id = answers.question_id WHERE questions.archived=0 OR answers.archived=0 GROUP BY answers.question_id';
+//   return executeDb(sql, []);
+// }
+
 function getQuestionAsc() {
-  const sql = 'SELECT * FROM questions ORDER BY created_at ASC';
+  const sql =
+    'SELECT * FROM questions WHERE archived=0 ORDER BY created_at ASC ';
   return executeDb(sql);
 }
 
 function getQuestionDesc() {
-  const sql = 'SELECT * FROM questions ORDER BY created_at DESC';
+  const sql =
+    'SELECT * FROM questions WHERE archived=0 ORDER BY created_at DESC ';
   return executeDb(sql);
 }
 

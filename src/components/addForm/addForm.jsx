@@ -35,28 +35,26 @@ function AddForm() {
         token,
         values
       );
-      console.log('addResult ===', addResult);
-
       if (addResult === 'Question successfully added') {
         toast.success('New question was added.');
         history.replace('/questions');
       }
-      console.log('addResult ===', addResult);
       if (addResult === 'Question was not added') {
         toast.error('Error while adding questions. Please try again.');
         return;
       }
-      console.log('submiting values ===', values);
     },
   });
 
   return (
     <div className={css['form-container']}>
-      <h3 className={css['form-title']}>Ask a question</h3>
+      <h3 className={css['form-title']}>Ask a question!</h3>
 
       <form onSubmit={formik.handleSubmit} className={css['add-form']}>
         <div className={css['form-group']}>
-          <label htmlFor="title">Enter title</label>
+          <label htmlFor="title" className={css['addFont']}>
+            Title name:
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -73,7 +71,9 @@ function AddForm() {
           )}
         </div>
         <div className={css['form-group']}>
-          <label htmlFor="content">Add content</label>
+          <label htmlFor="content" className={css['addFont']}>
+            Content:
+          </label>
           <textarea
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -91,8 +91,8 @@ function AddForm() {
             <p className={css['error-msg']}>{formik.errors.content}</p>
           )}
         </div>
-        <Button submit primary>
-          Add
+        <Button submit primary className={css['addFont']}>
+          Post a question.
         </Button>
       </form>
     </div>

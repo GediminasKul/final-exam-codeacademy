@@ -5,6 +5,10 @@ const {
   deleteQuestionFromDb,
   getAnswersFromDb,
   saveAnswerToDb,
+  getQuestionAsc,
+  getQuestionDesc,
+  getAnswerAsc,
+  getAnswerDesc,
 } = require('../models/questionModel');
 
 async function getAnswers(req, res) {
@@ -25,12 +29,12 @@ async function postAnswer(req, res) {
   try {
     const result = await saveAnswerToDb(idFromToken, id, content);
     if (result.affectedRows === 1) {
-      res.status(201).json('Answer has been succesfully added!');
+      res.status(201).json('Answer succesfully added!');
       return;
     }
-    res.status(400).json('Answer has not been added!');
+    res.status(400).json('Answer was not added!');
   } catch (error) {
-    console.log(error);
+    console.log('error in postAnswer ===', error);
     res.status(500).json('Something went wrong');
   }
 }
@@ -93,6 +97,43 @@ async function deleteQuestion(req, res) {
   }
 }
 
+async function showQuestionAsc(req, res) {
+  try {
+    const artArr = await getQuestionAsc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('error in showQuestionAsc ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showQuestionDesc(req, res) {
+  try {
+    const artArr = await getQuestionDesc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('error in showQuestionDesc ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showAnswerDesc(req, res) {
+  try {
+    const artArr = await getAnswerDesc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('error in showAnswerDesc  ===', error);
+    res.sendStatus(500);
+  }
+}
+async function showAnswerAsc(req, res) {
+  try {
+    const artArr = await getAnswerAsc();
+    res.json(artArr);
+  } catch (error) {
+    console.log('error in showAnswerAsc ===', error);
+    res.sendStatus(500);
+  }
+}
+
 module.exports = {
   addNewQuestion,
   getQuestions,
@@ -100,4 +141,8 @@ module.exports = {
   deleteQuestion,
   getAnswers,
   postAnswer,
+  showQuestionAsc,
+  showQuestionDesc,
+  showAnswerAsc,
+  showAnswerDesc,
 };

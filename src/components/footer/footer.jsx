@@ -4,7 +4,7 @@ function Footer() {
   return (
     <div className={css['footer']}>
       <p className={css['footer-text']}>
-        &copy; {new Date().getFullYear()} All rights reserved.
+        &copy; {new Date().getFullYear()} Gediminas @ CodeAcademy Exam.
       </p>
     </div>
   );

@@ -19,13 +19,13 @@ function Header() {
             to={'/questions'}
             className={`${css['nav-link']} ${css['left-nav']}`}
           >
-            Questions
+            List of Questions
           </NavLink>
           <NavLink
             to={'/add'}
             className={`${css['nav-link']} ${css['left-nav']}`}
           >
-            Ask Question
+            Post a Question!
           </NavLink>
         </div>
         <nav className={css['main-nav']}>
@@ -41,7 +41,7 @@ function Header() {
                 className={`${css['nav-link']} ${css['register']}`}
                 to={'register'}
               >
-                Sign up
+                Register
               </NavLink>
             </>
           )}
@@ -49,9 +49,7 @@ function Header() {
             {isUserLoggedIn && (
               <>
                 {isUserLoggedIn && (
-                  <p className={css['user-email']}>
-                    You are logged in as: {userEmail}
-                  </p>
+                  <p className={css['user-email']}>Welcome, {userEmail}.</p>
                 )}
                 <NavLink
                   onClick={() => {
