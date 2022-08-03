@@ -42,7 +42,9 @@ function LoginForm() {
 
       <form onSubmit={formik.handleSubmit} className={css['login-form']}>
         <div className={css['form-group']}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className={css['fontAdd']}>
+            Email
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -59,7 +61,9 @@ function LoginForm() {
           )}
         </div>
         <div className={css['form-group']}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className={css['fontAdd']}>
+            Password
+          </label>
           <input
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -77,10 +81,9 @@ function LoginForm() {
             <p className={css['error-msg']}>{formik.errors.password}</p>
           )}
         </div>
-        <p className={css['register-here']}>
-          New User?
+        <p>
           <NavLink to={'/register'} className={css['reg-link']}>
-            Register here!
+            If you don't have an account, click here to register.
           </NavLink>
         </p>
         <Button submit primary>

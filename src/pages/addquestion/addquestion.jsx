@@ -4,7 +4,7 @@ import css from './addquestion.module.css';
 
 function AddQuestion() {
   return (
-    <div className={css['questions-container']}>
+    <div className={css['container']}>
       <AddForm />
     </div>
   );

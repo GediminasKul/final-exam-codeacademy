@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans&family=Mouse+Memoirs&family=Open+Sans:wght@300;600&family=Passion+One:wght@700&family=Poppins:wght@300;400;500&family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+
 .primary {
-  background-color: bisque;
-  border: 0;
-  padding: 0.5rem 2rem;
+  background-color: rgb(249, 249, 249);
+  border: 1px solid rgb(1, 3, 5);
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   margin-top: 0.3rem;
+  border-radius: 25px;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 18px;
 }
 
 .secondary {
@@ -11,4 +16,5 @@
   border: 0;
   padding: 0.5rem 2rem;
   margin-top: 0.3rem;
+  font-family: 'Mouse Memoirs', sans-serif;
 }

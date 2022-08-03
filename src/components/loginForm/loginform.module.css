@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans&family=Mouse+Memoirs&family=Open+Sans:wght@300;600&family=Passion+One:wght@700&family=Poppins:wght@300;400;500&family=Roboto:wght@100;300;400;500;700;900&family=Sedgwick+Ave&display=swap');
+
+.form-container {
+  max-width: 30rem;
+  margin: 0 auto;
+  box-shadow: 0.2rem 0.5em 0.9rem grey;
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-top: -8rem;
+  margin-bottom: 4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.error-msg {
+  color: tomato;
+  margin: 0;
+}
+
+.invalid {
+  border: 0.01rem solid tomato;
+}
+
+.login-form input {
+  outline: none;
+  border-radius: 0.2rem;
+  min-height: 1.3rem;
+}
+
+.register-here {
+  margin: 0.1rem;
+  font-family: 'Mouse Memoirs', sans-serif;
+}
+
+.form-title {
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.fontAdd {
+  font-family: 'Mouse Memoirs', sans-serif;
+}
+.reg-link {
+  margin-left: 0.4rem;
+  text-decoration: none;
+  color: rgb(13, 85, 168);
+  font-family: 'Mouse Memoirs', sans-serif;
+}

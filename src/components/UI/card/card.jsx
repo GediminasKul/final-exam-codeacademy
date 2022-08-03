@@ -5,23 +5,9 @@ import Button from '../button/button';
 import css from './card.module.css';
 
 function Card(props) {
+  // const [answers, setAnswers] = useState('');
   const userId = useAuthCtx();
   const { isUserLoggedIn } = useAuthCtx();
-  // const [counterValue, setCounterValue] = useState(0);
-  // const [edited, setEdited] = useState(false);
-
-  // const [questions, setQuestions] = useState([]);
-  // const [question, setQuestion] = useState('');
-  // const [editingQuestion, setEditingQuestion] = useState(null);
-  // const [editingText, setEditingText] = useState('');
-
-  // function handleCounterInc() {
-  //   setCounterValue((prevState) => prevState + 1);
-  // }
-
-  // function handleCounterDec() {
-  //   setCounterValue((prevState) => prevState - 1);
-  // }
 
   function handleValues() {
     localStorage.setItem('title', props.title);
@@ -31,32 +17,13 @@ function Card(props) {
   return (
     <div className={css['card-container']}>
       <div className={css['card']}>
+        {/* <h3 className={css['count-answers']}>Total answers: {props.answers}</h3> */}
         <h2 className={css['title']}>{props.title}</h2>
         <h3 className={css['content']}>{props.content}</h3>
 
-        <NavLink to={`/${props.id}/answers/&title=${props.title}`}>
+        <NavLink onClick={handleValues} to={`/${props.id}/answers`}>
           <p>click to see answers</p>
         </NavLink>
-
-        {/* <div className={css['like-dislike']}>
-          <div className={css['like-container']}>
-            <span className={css['arrow-up']}>
-              <button className={css['like-button']} onClick={handleCounterInc}>
-                <Icon icon='fa-arrow-circle-o-up' />
-              </button>
-              <p>Like</p>
-            </span>
-          </div>
-          <p className={css['counter-value']}>{counterValue}</p>
-          <div className={css['dislike-container']}>
-            <span className={css['arrow-down']}>
-              <button className={css['dislike-button']} onClick={handleCounterDec}>
-                <Icon icon='fa-arrow-circle-o-down' />
-              </button>
-              <p>Dislike</p>
-            </span>
-          </div>
-        </div> */}
 
         <article className={css['created-edited-deleted']}>
           <div>
@@ -82,9 +49,7 @@ function Card(props) {
               </Button>
             )}
 
-            <NavLink
-              to={`/editQuestion/${props.id}/&title=${props.title}&content=${props.content}`}
-            >
+            <NavLink to={`/editQuestion/${props.id}`}>
               {+userId.userId === props.user_id && isUserLoggedIn && (
                 <Button button primary onClick={handleValues}>
                   Edit

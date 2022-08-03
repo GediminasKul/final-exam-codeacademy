@@ -52,6 +52,7 @@ async function getQuestions(req, res) {
 async function addNewQuestion(req, res) {
   const { title, content } = req.body;
   const idFromToken = req.userId;
+  console.log(req.body);
   try {
     const saveResult = await addQuestionToDb(title, content, idFromToken);
     if (saveResult.affectedRows === 1) {

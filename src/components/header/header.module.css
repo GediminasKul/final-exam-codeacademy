@@ -38,8 +38,9 @@
   color: #333;
   margin-left: 0.5rem;
   font-size: 28px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: underline;
 }
 
 .login {

@@ -7,7 +7,7 @@ function HomePage() {
     <div className={css['home-page-container']}>
       <h1>The place to ask questions (and receive answers, of course).</h1>
       <NavLink to={'/questions'} className={css['nav-link']}>
-        Here is a list of questions!
+        Click on this text to see a list of questions!
       </NavLink>
     </div>
   );
