@@ -11,7 +11,7 @@ function ProtectedRoute(props) {
         children
       ) : (
         <div className={css['protected-container']}>
-          <h2>Please login</h2>
+          <h2>In order to post a question, please login.</h2>
           <Link className={css['nav-link']} to={'/login'}>
             Login here
           </Link>
